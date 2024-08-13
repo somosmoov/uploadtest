@@ -1,0 +1,10 @@
+streamlit
+openai
+python-docx
+python-pptx
+pymupdf
+mammoth
+requests
+openpyxl
+azure-identity 
+azure-keyvault-secrets
