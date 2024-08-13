@@ -110,6 +110,7 @@ def trata_arquivo (uploaded_file):
     st.write("Tipo arquivo carregado",uploaded_file.type)
     # Process the uploaded file based on its type
     if uploaded_file.type == "application/pdf":
+        st.write("Lendo arquivo PDF",uploaded_file.name)
         document_text = read_pdf(uploaded_file)
     elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
         document_text = read_docx(uploaded_file)
