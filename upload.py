@@ -150,7 +150,7 @@ uploaded_files = st.file_uploader("Selecione os Documentos a serem analisados!",
 for uploaded_file in uploaded_files:
     bytes_data = uploaded_file.read()
     st.write("documento:", uploaded_file.name)
-    st.write(bytes_data)
+    #st.write(bytes_data)
 
 '''
 # Chamar a função para obter a pergunta
