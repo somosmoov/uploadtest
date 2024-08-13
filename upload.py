@@ -107,7 +107,7 @@ def read_xls(file_path):
 
 # Função para converter o arquido carregado para texto
 def trata_arquivo (uploaded_file):
-    #st.write("Tipo arquivo carregado",uploaded_file.type)
+    st.write("Tipo arquivo carregado",uploaded_file.type)
     # Process the uploaded file based on its type
     if uploaded_file.type == "application/pdf":
         document_text = read_pdf(uploaded_file)
