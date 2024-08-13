@@ -146,8 +146,8 @@ st.markdown("## 📝 Selecione os Documentos")
 
 # Let the user upload a file via `st.file_uploader`.
 uploaded_files = st.file_uploader("Selecione os Documentos a serem analisados!", 
-                                  type=("pdf", "docx", "doc", "ppt", "pptx", "txt", "md","xls","xlsx","xlsm","xltx","xltm"),
-                                  accept_multiple_files=True)
+                                  type=("pdf", "docx", "doc", "ppt", "pptx", "txt", "md","xls","xlsx","xlsm","xltx","xltm"))#,
+                                 # accept_multiple_files=True)
 for uploaded_file in uploaded_files:
     bytes_data = uploaded_file.read()
     document_text = read_pdf(uploaded_file)
