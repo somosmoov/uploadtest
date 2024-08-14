@@ -154,7 +154,7 @@ for uploaded_file in uploaded_files:
     st.write("Nome do arquivo:", uploaded_file.name)
     st.write("Tipo de conteúdo:", uploaded_file.type)
     st.write("Tamanho do arquivo:", uploaded_file.size, "bytes")
-    st.write("Última modificação:", uploaded_file.last_modified)
+    #st.write("Última modificação:", uploaded_file.last_modified)
     #st.write("documento:", uploaded_file.name)
     #st.write(document)
 
