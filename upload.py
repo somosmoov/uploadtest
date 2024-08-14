@@ -107,10 +107,10 @@ def read_xls(file_path):
 
 # Função para converter o arquido carregado para texto
 def trata_arquivo (uploaded_file):
-    st.write("Tipo arquivo carregado",uploaded_file.type)
+    #st.write("Tipo arquivo carregado",uploaded_file.type)
     # Process the uploaded file based on its type
     if uploaded_file.type == "application/pdf":
-        st.write("Lendo arquivo PDF",uploaded_file.name)
+        #st.write("Lendo arquivo PDF",uploaded_file.name)
         document_text = read_pdf(uploaded_file)
     elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
         document_text = read_docx(uploaded_file)
@@ -150,7 +150,12 @@ uploaded_files = st.file_uploader("Selecione os Documentos a serem analisados!",
                                   accept_multiple_files=True)
 for uploaded_file in uploaded_files:
     document = trata_arquivo(uploaded_file)
-    st.write("documento:", uploaded_file.name)
+    # Imprimir informações sobre o arquivo
+    st.write("Nome do arquivo:", uploaded_file.name)
+    st.write("Tipo de conteúdo:", uploaded_file.type)
+    st.write("Tamanho do arquivo:", uploaded_file.size, "bytes")
+    st.write("Última modificação:", uploaded_file.last_modified)
+    #st.write("documento:", uploaded_file.name)
     #st.write(document)
 
 '''
