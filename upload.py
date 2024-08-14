@@ -3,6 +3,7 @@ from openai import OpenAI
 from docx import Document
 import fitz  # PyMuPDF
 from pptx import Presentation
+from langchain_text_splitters import TokenTextSplitter
 import mammoth
 import requests
 import openpyxl
@@ -158,4 +159,10 @@ for uploaded_file in uploaded_files:
     #st.write("documento:", uploaded_file.name)
     #st.write(document)
 
-
+ text_splitter = TokenTextSplitter(chunk_size=500, chunk_overlap=50)
+        texts = text_splitter.split_text(file_content)
+        metadata = []
+        for i in range(0,len(texts)):
+            metadata.append({"path":file})
+        qdrant.add_texts(texts,metadatas=metadata)
+        len(texts)
