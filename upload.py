@@ -3,6 +3,8 @@ from openai import OpenAI
 from docx import Document
 import fitz  # PyMuPDF
 from pptx import Presentation
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_qdrant import Qdrant
 from langchain_text_splitters import TokenTextSplitter
 import mammoth
 import requests
