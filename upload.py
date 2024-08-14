@@ -150,19 +150,15 @@ uploaded_files = st.file_uploader("Selecione os Documentos a serem analisados!",
                                   type=("pdf", "docx", "doc", "ppt", "pptx", "txt", "md","xls","xlsx","xlsm","xltx","xltm"),
                                   accept_multiple_files=True)
 for uploaded_file in uploaded_files:
-    document = trata_arquivo(uploaded_file)
-    # Imprimir informações sobre o arquivo
+     # Imprimir informações sobre o arquivo
     st.write("Nome do arquivo:", uploaded_file.name)
     st.write("Tipo de conteúdo:", uploaded_file.type)
     st.write("Tamanho do arquivo:", uploaded_file.size, "bytes")
-    #st.write("Última modificação:", uploaded_file.last_modified)
-    #st.write("documento:", uploaded_file.name)
-    #st.write(document)
-
- text_splitter = TokenTextSplitter(chunk_size=500, chunk_overlap=50)
-        texts = text_splitter.split_text(file_content)
-        metadata = []
-        for i in range(0,len(texts)):
-            metadata.append({"path":file})
-        qdrant.add_texts(texts,metadatas=metadata)
-        len(texts)
+    document = trata_arquivo(uploaded_file)
+    text_splitter = TokenTextSplitter(chunk_size=500, chunk_overlap=50)
+    texts = text_splitter.split_text(document)
+    metadata = []
+    for i in range(0,len(texts)):
+        metadata.append({"path":file})
+        #qdrant.add_texts(texts,metadatas=metadata)
+    st.write('numero de chunks: 'len(texts))
