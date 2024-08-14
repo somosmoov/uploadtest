@@ -1,5 +1,6 @@
 # uploadtest
 Testes para upload vários arquivos
+
 O objeto 'uploaded_files' no código fornecido é uma lista de objetos de arquivo que representam os arquivos carregados pelo usuário por meio do widget de carregador de arquivos Streamlit. Cada objeto de arquivo na lista contém informações e métodos para manipular e interagir com o arquivo carregado correspondente. Aqui estão alguns detalhes sobre a composição do objeto 'uploaded_file' e seus métodos comuns de manipulação:
 
 1. **Nome do Arquivo**: Você pode acessar o nome do arquivo carregado usando o atributo 'name'. Por exemplo, 'uploaded_file.name' retornará o nome do arquivo como uma string.
