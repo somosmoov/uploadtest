@@ -156,7 +156,7 @@ hf = HuggingFaceEmbeddings(
     model_name=model_name,
     model_kwargs=model_kwargs,
     encode_kwargs=encode_kwargs
- )
+)
 # Let the user upload a file via `st.file_uploader`.
 uploaded_files = st.file_uploader("Selecione os Documentos a serem analisados!", 
                                   type=("pdf", "docx", "doc", "ppt", "pptx", "txt", "md","xls","xlsx","xlsm","xltx","xltm"),
