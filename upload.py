@@ -155,7 +155,7 @@ for uploaded_file in uploaded_files:
     st.write("Tipo de conteúdo:", uploaded_file.type)
     st.write("Tamanho do arquivo:", uploaded_file.size, "bytes")
     document = trata_arquivo(uploaded_file)
-    text_splitter = TokenTextSplitter(chunk_size=500, chunk_overlap=50)
+    text_splitter = TokenTextSplitter(chunk_size=1024, chunk_overlap=102)
     texts = text_splitter.split_text(document)
     metadata = []
     for i in range(0,len(texts)):
