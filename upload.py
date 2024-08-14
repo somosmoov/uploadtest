@@ -161,4 +161,4 @@ for uploaded_file in uploaded_files:
     for i in range(0,len(texts)):
         metadata.append({"path":file})
         #qdrant.add_texts(texts,metadatas=metadata)
-    st.write("numero de chunks: "len(texts))
+    st.write("numero de chunks: ",len(texts))
