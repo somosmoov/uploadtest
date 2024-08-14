@@ -146,7 +146,15 @@ def get_question():
 # Streamlit UI
 #st.title("📝 Selecione os documentos")
 st.markdown("## 📝 Selecione os Documentos")
-
+#model_name = "amberoad/bert-multilingual-passage-reranking-msmarco"
+model_name = "sentence-transformers/msmarco-bert-base-dot-v5"
+model_kwargs = {'device': 'cpu'}
+encode_kwargs = {'normalize_embeddings': True}
+hf = HuggingFaceEmbeddings(
+    model_name=model_name,
+    model_kwargs=model_kwargs,
+    encode_kwargs=encode_kwargs
+ )
 # Let the user upload a file via `st.file_uploader`.
 uploaded_files = st.file_uploader("Selecione os Documentos a serem analisados!", 
                                   type=("pdf", "docx", "doc", "ppt", "pptx", "txt", "md","xls","xlsx","xlsm","xltx","xltm"),
@@ -157,6 +165,15 @@ for uploaded_file in uploaded_files:
     st.write("Tipo de conteúdo:", uploaded_file.type)
     st.write("Tamanho do arquivo:", uploaded_file.size, "bytes")
     document = trata_arquivo(uploaded_file)
+    #
+    client = QdrantClient(path="qdrant/")
+    collection_name = "MyCollection"
+    if client.collection_exists(collection_name):
+        client.delete_collection(collection_name)
+    client.create_collection(collection_name,vectors_config=VectorParams(size=1024, distance=Distance.DOT))
+    qdrant = Qdrant(client, collection_name, hf)
+    st.writing("Indexing...")
+    # Chunking
     text_splitter = TokenTextSplitter(chunk_size=1024, chunk_overlap=102)
     texts = text_splitter.split_text(document)
     metadata = []
