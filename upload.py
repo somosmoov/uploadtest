@@ -9,6 +9,8 @@ from langchain_text_splitters import TokenTextSplitter
 import mammoth
 import requests
 import openpyxl
+from qdrant_client import QdrantClient
+from qdrant_client.models import Distance, VectorParams
 
 # Função para ler arquivos PDF
 def read_pdf(file):
