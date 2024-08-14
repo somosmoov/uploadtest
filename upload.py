@@ -158,37 +158,4 @@ for uploaded_file in uploaded_files:
     #st.write("documento:", uploaded_file.name)
     #st.write(document)
 
-'''
-# Chamar a função para obter a pergunta
-# question = get_question()
 
-# Ask the user for a question via `st.text_area`.
-question = st.text_input(
-    "Faça um questionamento",
-    placeholder="Por exemplo: Pode fornecer um sumário?",
-    disabled=not uploaded_file,
-)
-'''
-'''
-if uploaded_file and question:
-    # Process the uploaded file and question.
-    #document = uploaded_file.read().decode()
-    document = trata_arquivo(uploaded_file)
-    messages = [
-        {
-            "role": "user",
-            "content": f"Here's a document: {document} \n\n---\n\n {question}",
-        }
-    ]
-    #st.write(document)
-    # Generate an answer using the OpenAI API.
-    stream = client.chat.completions.create(
-        #model="gpt-3.5-turbo",
-        model="gpt-4o-mini",
-        messages=messages,
-        stream=True,
-    )
-
-    # Stream the response to the app using `st.write_stream`.
-    st.write_stream(stream)
-'''
