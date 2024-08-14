@@ -149,11 +149,9 @@ uploaded_files = st.file_uploader("Selecione os Documentos a serem analisados!",
                                   type=("pdf", "docx", "doc", "ppt", "pptx", "txt", "md","xls","xlsx","xlsm","xltx","xltm"),
                                   accept_multiple_files=True)
 for uploaded_file in uploaded_files:
-    #bytes_data = uploaded_file.read()
-    #document = read_pdf(bytes_data)
     document = trata_arquivo(uploaded_file)
     st.write("documento:", uploaded_file.name)
-    st.write(document)
+    #st.write(document)
 
 '''
 # Chamar a função para obter a pergunta
