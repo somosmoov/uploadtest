@@ -148,7 +148,6 @@ def get_question():
 # Streamlit UI
 #st.title("📝 Selecione os documentos")
 st.markdown("## 📝 Selecione os Documentos")
-#model_name = "amberoad/bert-multilingual-passage-reranking-msmarco"
 model_name = "sentence-transformers/msmarco-bert-base-dot-v5"
 model_kwargs = {'device': 'cpu'}
 encode_kwargs = {'normalize_embeddings': True}
