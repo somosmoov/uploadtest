@@ -154,7 +154,7 @@ st.markdown("## 📝 Carregue o Documento")
 #openai_api_key = st.secrets["api_openai"]
 
 # Defina a URL do seu Key Vault
-key_vault_url = KEY_VAULT_URL
+#key_vault_url = KEY_VAULT_URL
 
 # Crie um cliente para acessar o Key Vault
 #credential = DefaultAzureCredential()
