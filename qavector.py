@@ -229,5 +229,5 @@ if question:
         stop= ["\n"],
     )
 
-     # Exibir a resposta na interface Streamlit
-     st.write(f"Pergunta: {question}\nResposta: {completion.choices[0]['text']}")
+    # Exibir a resposta na interface Streamlit
+    st.write(f"Pergunta: {question}\nResposta: {completion.choices[0]['text']}")
