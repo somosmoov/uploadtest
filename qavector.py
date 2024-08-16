@@ -7,8 +7,6 @@ import mammoth
 import requests
 import openpyxl
 from qdrant_client import QdrantClient
-#from streamlit_openai import st_chat
-#from streamlit_openai.chat import Client
 
 # Função para ler arquivos PDF
 def read_pdf(file):
