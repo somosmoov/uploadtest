@@ -1,6 +1,6 @@
 streamlit==1.37.1
 openai
-qdrant==0.1.3
+qdrant
 transformers~=4.36.0.dev0
 python-docx
 python-pptx
