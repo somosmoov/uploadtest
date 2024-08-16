@@ -224,9 +224,9 @@ if question:
     completion = openai.Completion.create(
         engine="text-davinci-003",
         prompt=f"Pergunta: {question}\nContexto: {original_text}\nResposta:",
-        max_tokens: 50,
-        n: 1,
-        stop: ["\n"],
+        max_tokens= 50,
+        n= 1,
+        stop= ["\n"],
      )
 
      # Exibir a resposta na interface Streamlit
