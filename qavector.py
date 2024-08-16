@@ -227,7 +227,7 @@ if question:
         max_tokens= 50,
         n= 1,
         stop= ["\n"],
-     )
+    )
 
      # Exibir a resposta na interface Streamlit
      st.write(f"Pergunta: {question}\nResposta: {completion.choices[0]['text']}")
