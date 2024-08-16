@@ -14,5 +14,4 @@ qdrant-client
 langchain_community
 sentence_transformers
 langchain-qdrant
-langchain
 streamlit-openai
