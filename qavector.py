@@ -6,7 +6,8 @@ from pptx import Presentation
 import mammoth
 import requests
 import openpyxl
-from qdrant import Qdrant
+#from qdrant import Qdrant
+from qdrant_client import QdrantClient
 #from azure.identity import DefaultAzureCredential
 #from azure.keyvault.secrets import SecretClient
 
@@ -172,7 +173,8 @@ st.markdown("## 📝 Carregue o Documento")
 cliente = OpenAI(api_key=st.secrets.OPENAI_KEY)
 
 # Criar um objeto Qdrant para persistir os vetores
-qdrant_client = Qdrant("http://localhost:6333")
+#qdrant_client = Qdrant("http://localhost:6333")
+qdrant_client = QdrantClient(":memory:")
 
 # Let the user upload a file via `st.file_uploader`.
 uploaded_files = st.file_uploader("Selecione os Documentos a serem analisados!", 
