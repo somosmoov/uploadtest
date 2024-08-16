@@ -162,21 +162,21 @@ for uploaded_file in uploaded_files:
     st.write("Tipo de conteúdo:", uploaded_file.type)
     st.write("Tamanho do arquivo:", uploaded_file.size, "bytes")
     document = trata_arquivo(uploaded_file)
-    # Criar embeddings para o arquivo
+    
+    #Criar embeddings para o arquivo
     chunk_size = 1024
     embeddings = []
-    with document.open() as file:
-        while True:
-            chunk = file.read(chunk_size)
-            if not chunk:
-                break
-    response = openai.Embedding.create(input=chunk)
-    embedding = response["data"]["embedding"]
-    qdrant_client.add(embedding)
-    embeddings.append(embedding)
+
+    # Criar chunks do documento e gerar embeddings
+    for i in range(0, len(document), chunk_size):
+        chunk = document[i : i + chunk_size]
+        response = openai.Embedding.create(input=chunk)
+        embedding = response["data"]["embedding"]
+        qdrant_client.add(embedding)
+        embeddings.append(embedding)
     # Adicionar os embeddings do arquivo à lista de todos os embeddings
     all_embeddings.extend(embeddings)
-
+   
 # Obter a pergunta do usuário após o processamento de todos os arquivos
 question = st.text_input(
     "Faça um questionamento após a análise de todos os documentos",
