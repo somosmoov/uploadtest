@@ -167,7 +167,8 @@ retrieved_secret = client.get_secret(secret_name)
 #st.write("VALOR recuperado:", retrieved_secret)
 
 # Create an OpenAI client.
-client = OpenAI(api_key=retrieved_secret.value)
+#client = OpenAI(api_key=retrieved_secret.value) versão AZURE
+cliente = OpenAI(api_key=st.secrets.OPENAI_KEY)
 
 # Criar um objeto Qdrant para persistir os vetores
 qdrant_client = Qdrant("http://localhost:6333")
