@@ -183,12 +183,6 @@ question = st.text_input(
     placeholder="Por exemplo: Pode fornecer um sumário?",
 )
 
-# Obter a pergunta do usuário após o processamento de todos os arquivos
-question = st.text_input(
-    "Faça um questionamento após a análise de todos os documentos",
-    placeholder="Por exemplo: Pode fornecer um sumário?",
-)
-
 if question:
     # Encontre o embedding mais próximo à pergunta no Qdrant
     closest_embedding = qdrant_client.search(question, in_memory=True)[0]
