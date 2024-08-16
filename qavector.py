@@ -6,10 +6,10 @@ from pptx import Presentation
 import mammoth
 import requests
 import openpyxl
-from azure.identity import DefaultAzureCredential
-from azure.keyvault.secrets import SecretClient
+#from azure.identity import DefaultAzureCredential
+#from azure.keyvault.secrets import SecretClient
 
-KEY_VAULT_URL = "https://keyvaultdesen.vault.azure.net/"
+#KEY_VAULT_URL = "https://keyvaultdesen.vault.azure.net/"
 
 # Função para ler arquivos PDF
 def read_pdf(file):
@@ -157,12 +157,12 @@ st.markdown("## 📝 Carregue o Documento")
 key_vault_url = KEY_VAULT_URL
 
 # Crie um cliente para acessar o Key Vault
-credential = DefaultAzureCredential()
-client = SecretClient(vault_url=key_vault_url, credential=credential)
+#credential = DefaultAzureCredential()
+#client = SecretClient(vault_url=key_vault_url, credential=credential)
 
 # Acesse o segredo
-secret_name = "OpenAI-API-Key"
-retrieved_secret = client.get_secret(secret_name)
+#secret_name = "OpenAI-API-Key"
+#retrieved_secret = client.get_secret(secret_name)
 #st.write("A chave da API da OpenAI é:", retrieved_secret.value)
 #st.write("VALOR recuperado:", retrieved_secret)
 
