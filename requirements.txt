@@ -10,8 +10,8 @@ openpyxl
 azure-identity 
 azure-keyvault-secrets
 langchain-text-splitters
+qdrant
 qdrant-client
 langchain_community
 sentence_transformers
 langchain-qdrant
-qdrant
